@@ -28,8 +28,9 @@ docker run --rm \
   "/audio/$AUDIO_NAME" \
   --triton-url "$TRITON_URL" \
   --model-name "$MODEL_NAME" \
-  --mode transcribe \
-  --language hi \
-  --vad-filter 0 \
-  --return-srt 1 \
-  --return-vtt 1
+  --mode align \
+  --format srt \
+  --beam 3 \
+  --temp 0.1 \
+  --vad 0
+
